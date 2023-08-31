@@ -112,13 +112,13 @@ pm.test("Response body exist", function () {
 
 ## Instalar newman y reporter desde npm:
 
-npm install -g newman
-npm install -g newman-reporter-htmlextra
+1. npm install -g newman
+2. npm install -g newman-reporter-htmlextra
 
 ## Ejecutar una colección
 
-newman run "D:\Projects\deuapitesting\DEUNA - API Testing.postman_collection.json"
+3. newman run "D:\Projects\deuapitesting\DEUNA - API Testing.postman_collection.json"
 
 ## Ejecutar con reporter en html:
 
-newman run "D:\Projects\deuapitesting\DEUNA - API Testing.postman_collection.json" -r htmlextra
+3. newman run "D:\Projects\deuapitesting\DEUNA - API Testing.postman_collection.json" -r htmlextra
