@@ -8,6 +8,13 @@ Se tiene que validar las peticiones:
 ## Solución
 
 1. Para validar el post de autorización de pago se necesita verificar mediante un pre-request que
+
+_Para el body de esta request se tiene datos que podrian cambiar, por lo tanto, se considera generar numeros aleatorios para cada "clientID" y "name", enviarlos a la lista de variables de la colección antes de ejecutar la prueba y reutilizarlos en cada request._
+## PRE-REQUEST:
+- [x] Create a random Client ID
+- [x] Create a random FirstName and LastName
+- [x] Replace in Collection Variables
+
 ## TEST:
 ### El codigo de status es correcto:
 pm.test("Status code is 200", function () {
@@ -28,11 +35,6 @@ pm.test("Success message is correct", function () {
 ### Y se tiene que almacenar este authorizationToken en una variable de la colección para usarlo cuando se tenga que realizar un pago:
 pm.collectionVariables.set("strAuthToken", (pm.response.json().authorizationToken));
 
-_Para el body de esta request se tiene datos que podrian cambiar, por lo tanto, se considera generar numeros aleatorios para cada "clientID" y "name", enviarlos a la lista de variables de la colección antes de ejecutar la prueba y reutilizarlos en cada request._
-## PRE-REQUEST:
-- [x] Create a random Client ID
-- [x] Create a random FirstName and LastName
-- [x] Replace in Collection Variables
 
 2. Para validar el procesamiento del pago (/payment)
 
