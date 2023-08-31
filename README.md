@@ -94,6 +94,7 @@ pm.test("Payment method", function () {
 
 # 4. Total de ordenes (/orders/all)
 
+## TEST:
 ### El codigo de status es correcto:  
 pm.test("Status code is 200", function () {
     pm.response.to.have.status(200);
