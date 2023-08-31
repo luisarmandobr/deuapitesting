@@ -7,9 +7,9 @@ Se tiene que validar las peticiones:
 
 ## Solución
 
-1. Para validar el post de autorización de pago se necesita verificar mediante un pre-request que
+# 1. Para validar el post de autorización de pago se necesita verificar mediante un pre-request que
 
-_Para el body de esta request se tiene datos que podrian cambiar, por lo tanto, se considera generar numeros aleatorios para cada "clientID" y "name", enviarlos a la lista de variables de la colección antes de ejecutar la prueba y reutilizarlos en cada request._
+_Para el body de esta request se tiene datos que podrian cambiar, por lo tanto, se considera generar números aleatorios para cada "clientID" y "name", enviarlos a la lista de variables de la colección antes de ejecutar la prueba y reutilizarlos en cada request._
 ## PRE-REQUEST:
 - [x] Create a random Client ID
 - [x] Create a random FirstName and LastName
@@ -36,7 +36,7 @@ pm.test("Success message is correct", function () {
 pm.collectionVariables.set("strAuthToken", (pm.response.json().authorizationToken));
 
 
-2. Para validar el procesamiento del pago (/payment)
+# 2. Para validar el procesamiento del pago (/payment)
 
 Reutilizar la variable authorizationToken (strAuthToken) almacenada en las variables de la colección
 
@@ -71,7 +71,7 @@ pm.test("Payment method", function () {
 pm.collectionVariables.set("strTransactionID", (pm.response.json().transactionID));
 
 
-3. Para validar la consulta del estado del pago (/payment/status)
+# 3. Para validar la consulta del estado del pago (/payment/status)
 
 El transactionID se extrae de la colección de variables almaceandas en el request anterior.
 
@@ -92,7 +92,7 @@ pm.test("Payment method", function () {
 });
 
 
-4. Total de ordenes (/orders/all)
+# 4. Total de ordenes (/orders/all)
 
 ### El codigo de status es correcto:  
 pm.test("Status code is 200", function () {
@@ -107,6 +107,7 @@ pm.test("Response body exist", function () {
 
 
 # Ejecución via Newman
+=======================
 
 ## Instalar newman y reporter desde npm:
 
