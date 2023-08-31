@@ -101,3 +101,20 @@ pm.test("Status code is 200", function () {
 pm.test("Response body exist", function () {
     pm.expect(pm.response.body).to.exist;
 });
+
+
+
+# Ejecución via Newman
+
+## Instalar newman y reporter desde npm:
+
+npm install -g newman
+npm install -g newman-reporter-htmlextra
+
+## Ejecutar una colección
+
+newman run "D:\Projects\deuapitesting\DEUNA - API Testing.postman_collection.json"
+
+## Ejecutar con reporter en html:
+
+newman run "D:\Projects\deuapitesting\DEUNA - API Testing.postman_collection.json" -r htmlextra
